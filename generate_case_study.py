@@ -833,12 +833,19 @@ def generate_html_document(body_html, word_count, est_pages):
         <div class="stats-badge">
             <span class="badge-pill">{word_count:,} words</span>
             <span class="badge-pill status-blue">{est_pages} Pages (Limit: &le; 15 Pages)</span>
+            <a href="VERCEL_SECURITY_BREACH_CASE_STUDY.pdf" download="VERCEL_SECURITY_BREACH_CASE_STUDY.pdf" class="print-btn" style="text-decoration: none;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+                Download PDF
+            </a>
             <button class="print-btn" onclick="window.print()">
                 <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
                     <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
                 </svg>
-                Print / Download PDF
+                Print
             </button>
         </div>
     </div>
@@ -895,6 +902,11 @@ def main():
     with open(html_output_path, "w", encoding="utf-8") as f:
         f.write(full_html)
     print(f"[+] Successfully wrote: {html_output_path}")
+
+    index_output_path = "/home/ayush/Downloads/cs case study/index.html"
+    with open(index_output_path, "w", encoding="utf-8") as f:
+        f.write(full_html)
+    print(f"[+] Successfully wrote: {index_output_path}")
 
     # 4. Generate PDF via Chromium Headless
     pdf_output_path = "/home/ayush/Downloads/cs case study/VERCEL_SECURITY_BREACH_CASE_STUDY.pdf"
